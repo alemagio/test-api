@@ -3,25 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
     "start": "fastify start -l info app.js",
+    "predev": "run-s docker_dependencies",
+    "docker_dependencies": "docker-compose up start_dependencies",
     "dev": "fastify start -w -l info -P app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nearform/sql": "^1.9.0",
     "fastify": "^3.0.0",
-    "fastify-plugin": "^3.0.0",
     "fastify-autoload": "^3.3.1",
+    "fastify-cli": "^2.13.0",
+    "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.0",
-    "fastify-cli": "^2.13.0"
+    "mysql2": "^2.3.2"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "tap": "^15.0.9"
   }
 }

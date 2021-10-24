@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    database:
+        image: "mysql:8.0.25"
+        platform: "linux/x86_64"
+        ports:
+            - 3306:3306
+        env_file:
+            - .env
+        container_name: "test-api_database"
+        volumes:
+            - ./database/:/docker-entrypoint-initdb.d/
+
+    start_dependencies:
+        image: dadarek/wait-for-dependencies
+        depends_on:
+            - database
+        command: database:3306
