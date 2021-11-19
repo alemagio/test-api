@@ -50,3 +50,13 @@ npm install
 ```
 
 dopo qualche secondo il sistema dovrebbe concludere e nella cartella del nostro progetto dovrebbe essere presente un'altra cartella chiamata `node_modules`.
+
+# Utilizzo
+
+```bash
+nvm use
+```
+
+```bash
+npm run dev
+```
