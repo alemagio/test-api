@@ -30,6 +30,20 @@ INSERT INTO `users` (`id`, `lastName`, `firstName`, `username`, `password`) VALU
 	(6, 'Bartoletti', 'Cristiano', 'cb', '$2a$10$FDkjtet0XlwuzSYBes.HGO.xXxtdxNIys3YcZ8Lv7lS.eSh7/ptHe');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
+CREATE TABLE IF NOT EXISTS `dogs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `breed` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+
+/*!40000 ALTER TABLE `dogs` DISABLE KEYS */;
+INSERT INTO `dogs` (`name`, `breed`) VALUES
+	('fido', 'labrador'),
+	('lampo', 'barboncino'),
+	('ciuccio', 'pastore tedesco');
+/*!40000 ALTER TABLE `dogs` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
